@@ -3,4 +3,5 @@ function handleText() {
 };
 
 window.onload = function() {
-    document.getElementById('clickableText').addEventListener('click', () => {handleText()}); };
+    document.getElementById('clickableText').addEventListener('click', () => {handleText()}); 
+};
