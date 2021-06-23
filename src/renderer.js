@@ -1,7 +1,6 @@
 function handleText() {
-    console.log('handleText() function was called.')
-}
+    console.log('handleText() function was called. Here will be some logic later.');
+};
 
-document.getElementById('clickableText').addEventListener('click', () => {
-    handleText()
-})
+window.onload = function() {
+    document.getElementById('clickableText').addEventListener('click', () => {handleText()}); };
