@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 
+const { ipcMain } = require('electron')
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
@@ -14,7 +16,10 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 1080,
     height: 675,
-    resizable: false
+    resizable: false,
+    webPreferences: { 
+      nodeIntegration: true 
+    } 
   });
 
   // and load the index.html of the app.
@@ -51,8 +56,7 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
     createWindow();
-  }
+  };
+  console.log(p)
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
