@@ -57,6 +57,6 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   };
-  console.log(p)
+  // console.log(p)
 });
 
