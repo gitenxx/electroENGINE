@@ -2,7 +2,7 @@ var fs = require('fs');
 
 var lines; 
 
-fs.readFile('/Users/void_himmel/electroengine/src/content/script/scene1.txt', 'utf8', function (err, data) {
+fs.readFile(`${__dirname}/content/script/scene1.txt`, 'utf8', function (err, data) {
   lines = generateSequence(data.split(/\r?\n/));
   if (err) return console.log(err);
 });
