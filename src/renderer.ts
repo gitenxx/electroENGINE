@@ -16,10 +16,22 @@ window.onload = function () {
   });
 };
 
+function checkStringForMarkdown(CurrentString:string){
+  var r = /^#/;
+  return r.test(CurrentString)
+};
+
 function handleText() {
   const text: IteratorResult<string, void> = lines.next();
-  console.log(text);
-  if (!text.done) (document.getElementById('clickableText') as HTMLInputElement).value = text.value as string;
+  if (checkStringForMarkdown(text.value as string)){
+    console.log('suka name')
+    console.log(text)
+    if (!text.done) (document.getElementById('charName') as HTMLInputElement).innerHTML = text.value.replace(/#+/, '');
+    (document.getElementById('clickableText') as HTMLInputElement).value = lines.next().value as string;
+  } else {
+    console.log(text)
+    if (!text.done) (document.getElementById('clickableText') as HTMLInputElement).value = text.value as string;
+  }
 };
 
 function* generateSequence(seq: string[]): Generator<string, void, undefined> {
