@@ -8,14 +8,16 @@ html, body {
     width: 90%;
     position: absolute;
     bottom: 0;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.75);
+    z-index: 1;
 }
-img {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
+.bg {
+    background-image: url(../src/content/backgrounds/1.jpeg);   
+    background-size: cover;
+    width: 1080px;
+    height: 675px;
+    top: 0;
+    position: static;
 }
 
 input[type="button"]{
@@ -34,4 +36,20 @@ object {
 
 .textBlock {
     cursor: pointer;
+}
+
+.container {
+    position: absolute;
+}
+
+.sprite {
+    align-self: center;
+    width: 460px;
+    height: 560px;
+    position: absolute;
+    z-index: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
 }
