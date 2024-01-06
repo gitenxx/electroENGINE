@@ -11,28 +11,23 @@ window.onload = function () {
     if (err) return console.log(err);
   });
 
-  document.getElementById('clickableText').addEventListener('click', () => { 
+  document.getElementById('textBlock').addEventListener('click', () => { 
     handleText(); 
   });
 };
 
-function checkStringForMarkdown(CurrentString:string){
-  var r = /^#/;
-  return r.test(CurrentString)
-};
-
 function handleText() {
   const text: IteratorResult<string, void> = lines.next();
-  if (checkStringForMarkdown(text.value as string)){
-    console.log('suka name')
-    console.log(text)
-    if (!text.done) (document.getElementById('charName') as HTMLInputElement).innerHTML = text.value.replace(/#+/, '');
-    (document.getElementById('clickableText') as HTMLInputElement).value = lines.next().value as string;
-  } else {
-    console.log(text)
-    if (!text.done) (document.getElementById('clickableText') as HTMLInputElement).value = text.value as string;
+  switch (text.value, true) {
+    case (text.value[0] == "#"):
+      if (!text.done) (document.getElementById('charName') as HTMLInputElement).innerHTML = text.value.replace(/#+/, '');
+      (document.getElementById('clickableText') as HTMLInputElement).value = lines.next().value as string;
+      break;
+    default:
+      if (!text.done) (document.getElementById('clickableText') as HTMLInputElement).value = text.value as string;
+      break;
   }
-};
+}
 
 function* generateSequence(seq: string[]): Generator<string, void, undefined> {
   yield* seq;
