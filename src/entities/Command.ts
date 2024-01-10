@@ -19,7 +19,6 @@ export class Command {
     }
 
     addLine(line: string) {
-        line = line.replace(' ', '')
         if(line.length) {
             this.lines.push(line)
         } else {

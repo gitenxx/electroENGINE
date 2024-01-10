@@ -7,12 +7,14 @@ export = Renderer;
 const novelEngine = new NovelEngine();
 
 novelEngine.selectScript('test.txt')
+    .then(() => {
+        novelEngine.run();
+    })
 
 
 const textBlock = document.getElementById('textBlock')
 if (textBlock) {
     textBlock.addEventListener('click', () => {
-        console.log(1);
         novelEngine.run();
     })
 }
