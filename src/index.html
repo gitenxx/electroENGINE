@@ -9,14 +9,12 @@
   </head>
 
   <body>
-      <div class="textBlock" id="textBlock">
-        <div class="container">
-          <h1 id="charName"> </h1>
-          <script src='./renderer.ts'></script>
-          <p><input id="clickableText" type="button" value= "Sample text." onclick="handleText"></p> 
-        </div>
+      <div id="backgroundBlock"></div>
+      <div id="spriteBlock"></div>
+      <div id="textBlock">
+          <div id="charName"></div>
+          <div id="speech"></div>
       </div>
-      <img class="sprite" id="sprite" src="./content/sprites/erika_1.png">
-    <div class="bg"></div>
-   </body>
+      <script src='./renderer.ts'></script>
+  </body>
 </html>

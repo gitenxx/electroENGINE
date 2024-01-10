@@ -1,0 +1,12 @@
+<background> adsf
+
+<sprite> adfs afsd
+
+<name> asdf
+
+<speech> asdfasdf
+asdfфывафыва
+asdfфывафыва
+asdfфывафыва
+
+

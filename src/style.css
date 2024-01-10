@@ -1,55 +1,50 @@
-html, body {
-    position:fixed;
-}
-.textBlock {
-    height: 35%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    width: 90%;
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(255,255,255,0.75);
-    z-index: 1;
-}
-.bg {
-    background-image: url(../src/content/backgrounds/1.jpeg);   
+#backgroundBlock {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-repeat: no-repeat;
     background-size: cover;
-    width: 1080px;
-    height: 675px;
-    top: 0;
-    position: static;
-}
-
-input[type="button"]{
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-object {
-    display: none;
-}
-
-.textBlock {
-    cursor: pointer;
-}
-
-.container {
-    position: absolute;
 }
 
 .sprite {
-    align-self: center;
-    width: 460px;
-    height: 560px;
     position: absolute;
-    z-index: 0;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    height: 90%;
+    bottom: 0;
+}
+
+.sprite.left {
+    left: 10%
+}
+
+.sprite.right {
+    right: 10%
+}
+
+.sprite.center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#textBlock {
+    background: #d3d3d3d4;
+    margin: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 48px);
+    height: 30%;
+    cursor: pointer;
+}
+
+#charName {
+    display: inline-block;
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: gray;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    line-height: 16px;
 }
